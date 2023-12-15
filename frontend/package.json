@@ -1,12 +1,12 @@
 {
-  "name": "web",
+  "name": "frontend",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint --config ../.eslintrc.json --fix"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",

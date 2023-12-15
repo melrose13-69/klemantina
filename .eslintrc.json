@@ -5,85 +5,62 @@
     "jest": true
   },
   "plugins": [
-    "@nx",
-    "prettier"
+    "prettier",
+    "@typescript-eslint",
+    "sort-exports",
+    "react-hooks",
+    "react"
   ],
   "extends": [
+    "prettier",
     "eslint:recommended",
     "plugin:import/recommended",
-    "prettier"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended"
   ],
-  "overrides": [
-    {
-      "extends": [
-        "plugin:prettier/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:@nx/react-typescript"
-      ],
-      "plugins": [
-        "@typescript-eslint",
-        "sort-exports",
-        "react-hooks",
-        "react"
-      ],
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js"
-      ],
-      "rules": {
-        "@nx/enforce-module-boundaries": "off",
-        "no-new-func": "error",
-        "import/no-unresolved": "off",
-        "no-new-object": "error",
-        "no-new-wrappers": "error",
-        "no-param-reassign": "error",
-        "no-array-constructor": "error",
-        "no-confusing-arrow": "error",
-        "no-delete-var": "error",
-        "no-else-return": "error",
-        "class-methods-use-this": "error",
-        "default-case": "error",
-        "default-case-last": "error",
-        "default-param-last": "off",
-        "func-names": "error",
-        "no-promise-executor-return": "error",
-        "no-setter-return": "error",
-        "no-this-before-super": "error",
-        "no-unsafe-finally": "error",
-        "no-unsafe-optional-chaining": "error",
-        "array-callback-return": "error",
-        "no-await-in-loop": "error",
-        "no-dupe-args": "error",
-        "import/consistent-type-specifier-style": "error",
-        "no-console": ["error", { "allow": ["error"] }],
-        "no-debugger": "error"
+  "rules": {
+    "no-new-func": "error",
+    "import/no-unresolved": "off",
+    "no-new-object": "error",
+    "no-new-wrappers": "error",
+    "no-param-reassign": "error",
+    "no-array-constructor": "error",
+    "no-confusing-arrow": "error",
+    "no-delete-var": "error",
+    "no-else-return": "error",
+    "class-methods-use-this": "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "default-param-last": "off",
+    "func-names": "error",
+    "no-promise-executor-return": "error",
+    "no-setter-return": "error",
+    "no-this-before-super": "error",
+    "no-unsafe-finally": "error",
+    "no-unsafe-optional-chaining": "error",
+    "array-callback-return": "error",
+    "no-await-in-loop": "error",
+    "no-dupe-args": "error",
+    "import/consistent-type-specifier-style": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "error"
+        ]
       }
-    },
-    {
-      "files": ["*.js"],
-      "rules": {
-        "@typescript-eslint/no-var-requires": "off"
+    ],
+    "no-debugger": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-curly-brace-presence": "error",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "noSortAlphabetically": true
       }
-    },
-    {
-      "files": ["*.tsx"],
-      "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "react/jsx-curly-brace-presence": "error",
-        "react/jsx-sort-props": ["error", {
-          "callbacksLast": true,
-          "noSortAlphabetically": true
-        }]
-      }
-    },
-    {
-      "files": ["*.tsx", "*.ts"],
-      "rules": {
-        "@typescript-eslint/consistent-type-imports": "error"
-      }
-    }
-  ]
+    ]
+  }
 }
